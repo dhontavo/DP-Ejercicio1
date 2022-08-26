@@ -17,7 +17,7 @@
   <div class="container font">
     <div class="row">
       <div class="col">&nbsp;</div>
-      <div class="col">
+      <div class="col" style="text-align: center">
         <h1>Ejercicio#1</h1>
       </div>
       <div class="col">&nbsp;</div>
