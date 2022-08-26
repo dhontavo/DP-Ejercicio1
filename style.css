@@ -1,0 +1,14 @@
+table {
+
+    width: 100%;
+    border: 1px solid #000;
+   border-collapse: separate;
+   border-spacing: 5px;
+   /* background: #000 url("gradient.gif") bottom left repeat-x; */
+ }
+ th, td {
+    width: 25%;
+    border: 1px solid #000;
+ }
+
+
