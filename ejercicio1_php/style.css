@@ -1,0 +1,29 @@
+
+body{
+   font: 100% sans-serif;
+}
+ 
+.font{
+   background-color: #000;
+   color: #FFF;
+}
+
+table {
+/* 
+   width: 100%;
+   border: 1px solid #000;
+   border-collapse: collapse;
+   border-spacing: 5px; */
+   text-align: center;
+ }
+ th, td {
+   width: 25%;
+   border-collapse: collapse;
+   border-bottom: 1px solid #000;
+ }
+
+ 
+ 
+
+
+
