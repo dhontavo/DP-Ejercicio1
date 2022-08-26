@@ -12,7 +12,19 @@
     <title>Ejercicio 1</title>
 </head>
 <body>
-
+    <div class="container">
+      <div class="row">
+        <div class="col">&nbsp;</div>
+        <div class="col">&nbsp;</div>
+        <div class="col">
+          <div class="row">
+            <div class="col">&nbsp;</div>
+            <a href="\Ejercicio1/ejercicio1_js/index.html" class="btn btn-link">Siguiente </a>
+            <div class="col">&nbsp;</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
   <div class="container font">
     <div class="row">
@@ -60,8 +72,9 @@
                       <td>".$value["color"]."</td>
                       </tr>";
                     }
-                }
-
+                  }
+                  
+                  echo'<script>console.log('.json_encode($Array).')</script>';
                 $file = 'Respuesta1.json';
                 file_put_contents($file, json_encode($Array));
 
