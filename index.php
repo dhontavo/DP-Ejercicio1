@@ -6,57 +6,92 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    
     <title>Ejercicio 1</title>
 </head>
 <body>
 
 
+  <div class="container font">
+    <div class="row">
+      <div class="col">&nbsp;</div>
+      <div class="col">
+        <h1>Ejercicio#1</h1>
+      </div>
+      <div class="col">&nbsp;</div>
+    </div>
+  </div>
 
+  <div>&nbsp;</div>
     <form action="" method="get">
 
-    <table>
-    <thead>
-    <tr>
+    <div class="container">
+      <div>
+      <div class="col-sm"></div>
+      <div class="col">
+            <table class="table table-striped">
+              <thead class="thead-dark">
+              <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Type</th>
+              <th scope="col">Color</th>
+              </tr>
+              </thead>
+            <tbody>
+            <?php
 
-    <td>ID</td>
+                $res = file_get_contents("https://my-json-server.typicode.com/dp-danielortiz/dptest_jsonplaceholder/items");
 
-    <td>Type</td>
 
-    <td>Color</td>
+                $arr = json_decode($res, true); //Convertir JSON a ARRAY
 
-  </tr>
+                $Array[]= array();
 
-  <?php
+                foreach($arr as  $value) {
+                    if($value["color"]=="green"){
 
-  $res = file_get_contents("https://my-json-server.typicode.com/dp-danielortiz/dptest_jsonplaceholder/items");
+                      $Array = $value; // Agregar elementos a un array
+                      // contenido de la Tabla
+                      echo"<tr>
+                      <td>".$value["id"]."</td>
+                      <td>".$value["type"]."</td>
+                      <td>".$value["color"]."</td>
+                      </tr>";
+                    }
+                }
 
-  
-  $arr = json_decode($res, true); //Convertir JSON a ARRAY
+                $file = 'Respuesta1.json';
+                file_put_contents($file, json_encode($Array));
 
-  $Array[]= array();
+            ?>
 
-    foreach($arr as  $value) {
-      if($value["color"]=="green"){
+            </tbody>
 
-        $Array = $value; // Agregar elementos a un array
-        
-        echo"<tr>
-        <td>".$value["id"]."</td>
-        <td>".$value["type"]."</td>
-        <td>".$value["color"]."</td>
-        </tr>";
-      }
-    }
-
-    $file = 'Respuesta1.json';
-    file_put_contents($file, json_encode($Array));
-    
-?>
-
-    </table>
+            </table>
+      </div>
+      <div class="col-sm"></div>
+      </div>
+     
+    </div>
     </form>
-    <!-- <a href="Respuesta1.json">Documento</a>  -->
-    <a href="descarga.php">Documento</a> 
+    <br>
+    
+   <div class="container">
+   <div class="row">
+      <div class="col">&nbsp;</div>
+      <div class="col">&nbsp;</div>
+      <div class="col">
+        <div class="row">
+        <div class="col">&nbsp;</div>
+        <a href="descarga.php" class="btn btn-success">Descarga</a>
+        <!-- <button href="descarga.php" class="btn btn-success">Descarga</button> -->
+        <div class="col">&nbsp;</div>
+        </div>
+      </div>
+    </div>
+   </div>
   
 </body>
 </html>
