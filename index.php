@@ -37,8 +37,9 @@
 
     foreach($arr as  $value) {
       if($value["color"]=="green"){
-        // array_push($Array,$value["id"],$value["type"],$value["color"]);
-        $Array = $value;
+
+        $Array = $value; // Agregar elementos a un array
+        
         echo"<tr>
         <td>".$value["id"]."</td>
         <td>".$value["type"]."</td>
@@ -47,14 +48,15 @@
       }
     }
 
-    $file = 'clientes.json';
+    $file = 'Respuesta1.json';
+    file_put_contents($file, json_encode($Array));
     
-    // file_put_contents($file, json_encode($Array));
 ?>
 
     </table>
     </form>
-
-    <button type="button" onclick="file_put_contents($file, json_encode($Array));">VOLVER</button>
+    <!-- <a href="Respuesta1.json">Documento</a>  -->
+    <a href="descarga.php">Documento</a> 
+  
 </body>
 </html>
