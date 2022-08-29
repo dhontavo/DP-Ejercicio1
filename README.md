@@ -1,4 +1,4 @@
-# DP-Ejercicio1
+# Practica1
 
 ####  Como correr el codigo
 
